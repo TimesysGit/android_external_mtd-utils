@@ -46,6 +46,27 @@ LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
 
+# libubi static lib.
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+	src/libubi.c \
+	src/libmtd.c \
+	src/libscan.c \
+	src/libubigen.c \
+	src/crc32.c \
+	src/common.c
+
+LOCAL_CFLAGS = -O2 -Wall
+LOCAL_CFLAGS += -Wall -Wextra -Wwrite-strings -Wno-sign-compare -D_FILE_OFFSET_BITS=64
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/src
+
+LOCAL_MODULE := libubi
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_STATIC_LIBRARY)
+
 # ubinfo util
 #
 include $(CLEAR_VARS)
