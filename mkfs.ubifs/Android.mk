@@ -18,9 +18,9 @@ LOCAL_CC := /usr/bin/gcc
 LOCAL_CXX := /usr/bin/g++
 LOCAL_CFLAGS = -O2 -Wall
 LOCAL_CFLAGS+= -Wpointer-arith -Wwrite-strings -Wstrict-prototypes
-LOCAL_CFLAGS+= -Wmissing-prototypes -Winline
+LOCAL_CFLAGS+= -Wmissing-prototypes -Winline -m64
 LOCAL_LDFLAGS += -L/usr/lib/x86_64-linux-gnu
-LOCAL_LDLIBS:= -lz -llzo2 -lm -luuid
+LOCAL_LDLIBS:= -lz -llzo2 -lm -luuid -m64
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/
 LOCAL_C_INCLUDES += /usr/include/
