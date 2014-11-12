@@ -1,5 +1,5 @@
 # Copyright 2009 The Android Open Source Project
-
+ifneq ($(findstring x5.0,x$(PLATFORM_VERSION)), x5.0)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -30,3 +30,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := mkfs.ubifs
 
 include $(BUILD_HOST_EXECUTABLE)
+
+endif
+
